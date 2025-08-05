@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women Protection</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+    background-color: #f8f9fa;
+    font-family: 'Arial', sans-serif;
+    background: url('bgpic.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    height: 100vh; /* Ensures full viewport height */
+}
+
+
+        .card {
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-custom {
+            border-radius: 20px;
+        }
+
+        #dangerButton {
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .dashboard-info {
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5" id="app">
+        <!-- Login Page -->
+        <div id="loginPage" class="justify-content-center align-items-center">
+            <div class="card mx-auto glassy-container" style="max-width: 400px;">
+                <div class="card-body">
+                    <h3 class="card-title text-center">Login</h3>
+                    <form id="loginForm">
+                        <div class="form-group mb-3">
+                            <label for="loginName">Name</label>
+                            <input type="text" class="form-control" id="loginName" placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="loginPassword">Password</label>
+                            <input type="password" class="form-control" id="loginPassword" placeholder="Enter your password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block btn-custom w-100">Login</button>
+                        <p class="text-center mt-3">Don't have an account? <a href="#" id="showSignup">Sign Up</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <style>
+
+    
+        .glassy-container {
+            background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            backdrop-filter: blur(10px); /* Blur effect */
+            -webkit-backdrop-filter: blur(10px); /* For Safari support */
+            border: 1px solid rgba(255, 255, 255, 0.3); /* Light border */
+            border-radius: 15px; /* Rounded corners */
+        }
+    
+        .card-body {
+            color: #fff; /* Text color for readability */
+        }
+    
+        .btn-custom {
+            background-color: rgba(0, 123, 255, 0.8); /* Semi-transparent button */
+            border: none;
+        }
+    
+        .btn-custom:hover {
+            background-color: rgba(0, 123, 255, 1); /* Solid color on hover */
+        }
+    </style>
+    
+
+        <!-- Signup Page -->
+        <div id="signupPage" style="display: none;">
+    <div class="card mx-auto glassy-container" style="max-width: 700px;">
+        <div class="card-body">
+            <h3 class="card-title text-center">Sign Up</h3>
+            <form id="signupForm">
+                <div class="form-group mb-3">
+                    <label for="signupName">Name</label>
+                    <input type="text" class="form-control" id="signupName" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="signupPassword">Password</label>
+                    <input type="password" class="form-control" id="signupPassword" placeholder="Create a password" required>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="emergencyContacts">Emergency Contacts</label>
+                    <div id="contactInputs">
+                        <input type="text" class="form-control mb-2" placeholder="Enter contact" required>
+                    </div>
+                    <div id="RelationInputs">
+                        <input type="text" class="form-control mb-2" placeholder="Enter the Relation" required>
+                    </div>
+                    <button type="button" class="btn btn-secondary btn-sm" id="addContact">Add Another Contact</button>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="signupLocation">Choose the native state</label>
+                    <select name="Location" class="form-control">
+                        <option value="">-- select your state --</option>
+                        <option value="">Andhra Pradesh</option>
+                        <option value="">Arunachal Pradesh</option>
+                        <option value="">Assam</option>
+                        <option value="">Bihar</option>
+                        <option value="">Chattisgarh</option>
+                        <option value="">Goa</option>
+                        <option value="">Gujarat</option>
+                        <option value="">Haryana</option>
+                        <option value="">Himachal Pradesh</option>
+                        <option value="">Jharkand</option>
+                        <option value="">Karnataka</option>
+                        <option value="">Kerala</option>
+                        <option value="">Madhya Pradesh</option>
+                        <option value="">Maharastra</option>
+                        <option value="">Manipur</option>
+                        <option value="">Meghalaya</option>
+                        <option value="">Mizoram</option>
+                        <option value="">Nagaland</option>
+                        <option value="">Odisha</option>
+                        <option value="">Punjab</option>
+                        <option value="">Rajasthan</option>
+                        <option value="">Sikkim</option>
+                        <option value="">Tamil Nadu</option>
+                        <option value="">Telangana</option>
+                        <option value="">Tripura</option>
+                        <option value="">Uttar Pradesh</option>
+                        <option value="">Uttarkhand</option>
+                        <option value="">West Bengal</option>
+                    </select>
+                    <label for="bloodGroup">Address of Working</label>
+                    <input type="text" class="form-control" id="Address" placeholder="e.g. 23-04-506,street no,area name" required>
+                </div>
+                <button type="submit" class="btn btn-success btn-block btn-custom w-100">Sign Up</button>
+                <p class="text-center mt-3">Already have an account? <a href="#" id="showLogin">Login</a></p>
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+    .glassy-container {
+        background: rgba(255, 255, 255, 0.2);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.3); /* Light border */
+        border-radius: 15px;
+    }
+
+    .card-body {
+        color: #fff;
+    }
+
+    .btn-custom {
+        background-color: rgba(40, 167, 69, 0.8); /* Semi-transparent success button */
+        border: none;
+    }
+
+    .btn-custom:hover {
+        background-color: rgba(40, 167, 69, 1); /* Solid color on hover */
+    }
+</style>
+
+
+        <!-- Dashboard -->
+        <div id="dashboardPage" style="display: none; font-display: white;">
+            <h1 class="text-center mb-4" style="color: white;"><strong><b>Protectra DashBoard</b></strong></h1>
+            <div class="dashboard-info mx-auto mb-4" style="max-width: 600px;">
+                <h4>Your Profile</h4>
+                <p><strong>Name:</strong> <span id="profileName"></span></p>
+                <p><strong>Emergency Contacts:</strong> <span id="profileContacts"></span></p>
+                <p><strong>Address:</strong> <span id="profileBloodGroup"></span></p>
+            </div>
+            <div class="text-center">
+                <button id="dangerButton" class="btn btn-danger btn-lg me-3">Danger</button>
+                <button id="safeButton" class="btn btn-success btn-lg">I'm Okay</button>
+            </div>
+            <div class="mt-5" style="color:white">
+                <h3 style="color:white">Women Safety Laws</h3>
+                <ul style="color:white">
+                    <li><strong>Protection of Women from Domestic Violence Act:</strong> Relief for women in abusive situations.</li>
+                    <li><strong>Sexual Harassment of Women at Workplace Act:</strong> Ensures workplace safety for women.</li>
+                    <li><strong>Section 354 IPC:</strong> Deals with assault to outrage modesty.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const loginPage = document.getElementById("loginPage");
+        const signupPage = document.getElementById("signupPage");
+        const dashboardPage = document.getElementById("dashboardPage");
+
+        document.getElementById("showSignup").addEventListener("click", () => {
+            loginPage.style.display = "none";
+            signupPage.style.display = "block";
+        });
+
+        document.getElementById("showLogin").addEventListener("click", () => {
+            signupPage.style.display = "none";
+            loginPage.style.display = "block";
+        });
+
+        let userData = {};
+
+        // Add dynamic contact input
+        document.getElementById("addContact").addEventListener("click", () => {
+            const input = document.createElement("input");
+            input.type = "text";
+            input.className = "form-control mb-2";
+            input.placeholder = "Enter contact";
+            input.required = true;
+            document.getElementById("contactInputs").appendChild(input);
+        });
+        document.getElementById("addContact").addEventListener("click", () => {
+            const input = document.createElement("input");
+            input.type = "text";
+            input.className = "form-control mb-2";
+            input.placeholder = "Enter Relation";
+            input.required = true;
+            document.getElementById("RelationInputs").appendChild(input);
+        });
+
+        document.getElementById("signupForm").addEventListener("submit", (e) => {
+            e.preventDefault();
+            const contactInputs = document.querySelectorAll("#contactInputs input");
+            const contacts = Array.from(contactInputs).map(input => input.value);
+            const relationInputs=document.querySelectorAll("#RelationInputs input");
+            const relations=Array.from(relationInputs).map(input => input.value);
+
+            userData = {
+                name: document.getElementById("signupName").value,
+                password: document.getElementById("signupPassword").value,
+                contacts: contacts,
+                Relation:relations,
+                Address: document.getElementById("Address").value
+            };
+
+            alert("Account created successfully!");
+            signupPage.style.display = "none";
+            loginPage.style.display = "block";
+        });
+
+        document.getElementById("loginForm").addEventListener("submit", (e) => {
+            e.preventDefault();
+            const name = document.getElementById("loginName").value;
+            const password = document.getElementById("loginPassword").value;
+
+            if (name === userData.name && password === userData.password) {
+                alert("Login successful!");
+                document.getElementById("profileName").textContent = userData.name;
+                document.getElementById("profileContacts").textContent = userData.contacts.join(", ");
+                document.getElementById("profileBloodGroup").textContent = userData.Address;
+                loginPage.style.display = "none";
+                dashboardPage.style.display = "block";
+            } else {
+                alert("Invalid credentials!");
+            }
+        });
+
+        // Emergency alert
+        document.getElementById("dangerButton").addEventListener("dblclick", () => {
+            navigator.geolocation.getCurrentPosition((position) => {
+                const { latitude, longitude } = position.coords;
+                const message = `Emergency alert! User is in danger. Location: Latitude ${latitude}, Longitude ${longitude}`;
+                
+                userData.contacts.forEach(contact => {
+                    console.log(`Sending alert to ${contact}: ${message}`);
+                });
+
+                alert("Emergency alert sent to contacts!");
+            }, () => {
+                alert("Unable to fetch location. Please enable location services.");
+            });
+        });
+
+        document.getElementById("safeButton").addEventListener("dblclick", () => {
+            alert("Status updated to safe!");
+        });
+
+
+
+
+
+
+
+
+// const TWILIO_ACCOUNT_SID = "AC3d47d6c837a3d738bfb8e9e5efc835fe"; // Replace with your Twilio Account SID
+// const TWILIO_AUTH_TOKEN = "ydcd700823ec32e0e2bc8dd9b3600aeb0"; // Replace with your Twilio Auth Token
+// const TWILIO_PHONE_NUMBER = "+15072600919"; // Replace with your Twilio phone number
+// const SENDGRID_API_KEY = "S41HKd29XAd5mgLm3BEewBk2BEUDTzQI"; // Replace with your SendGrid API Key
+
+// // Emergency alert with Twilio and SendGrid
+// document.getElementById("dangerButton").addEventListener("dblclick", () => {
+//     if (navigator.geolocation) {
+//         navigator.geolocation.getCurrentPosition((position) => {
+//             const { latitude, longitude } = position.coords;
+//             const locationLink = `https://maps.google.com/?q=${latitude},${longitude}`;
+//             const message = `Emergency alert! User is in danger. Live Location: ${locationLink}`;
+
+//             // Sending alerts
+//             userData.contacts.forEach(contact => {
+//                 if (contact.includes("@")) {
+//                     sendEmail(contact, userData.name, userData.bloodGroup, locationLink, message);
+//                 } else {
+//                     sendSMS(contact, message);
+//                 }
+//             });
+
+//             alert("Emergency alert sent to contacts!");
+//         }, () => {
+//             alert("Unable to fetch location. Please enable location services.");
+//         });
+//     }
+// });
+
+// // Function to send SMS using Twilio API
+// function sendSMS(to, body) {
+//     fetch(`https://api.twilio.com/2010-04-01/Accounts/${TWILIO_ACCOUNT_SID}/Messages.json`, {
+//         method: "POST",
+//         headers: {
+//             "Authorization": "Basic " + btoa(`${TWILIO_ACCOUNT_SID}:${TWILIO_AUTH_TOKEN}`),
+//             "Content-Type": "application/x-www-form-urlencoded"
+//         },
+//         body: new URLSearchParams({
+//             To: to,
+//             From: +17753109923,
+//             Body: body
+//         })
+//     })
+//     .then(response => response.json())
+//     .then(data => console.log("SMS sent successfully:", data))
+//     .catch(error => console.error("Error sending SMS:", error));
+// }
+
+// // Function to send Email using SendGrid API
+// function sendEmail(to, name, bloodGroup, location, message) {
+//     fetch("https://api.sendgrid.com/v3/mail/send", {
+//         method: "POST",
+//         headers: {
+//             "Authorization": `Bearer ${SENDGRID_API_KEY}`,
+//             "Content-Type": "application/json"
+//         },
+//         body: JSON.stringify({
+//             personalizations: [{
+//                 to: [{ email: to }],
+//                 subject: "Emergency Alert - Women Protection App"
+//             }],
+//             from: { email: "vinay12303110@gmail.com" }, // Replace with a verified sender email
+//             content: [{
+//                 type: "text/plain",
+//                 value: `
+//                     Emergency Alert!
+                    
+//                     Name: ${name}
+//                     Blood Group: ${bloodGroup}
+//                     Location: ${location}
+//                     Message: ${message}
+//                 `
+//             }]
+//         })
+//     })
+//     .then(response => response.json())
+//     .then(data => console.log("Email sent successfully:", data))
+//     .catch(error => console.error("Error sending email:", error));
+// }
+
+    </script>
+</body>
+</html>

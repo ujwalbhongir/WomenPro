@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f9f9f9;
+}
+
+header {
+    background-color: #ff6b6b;
+    color: white;
+    padding: 1em;
+    text-align: center;
+    width: 100%;
+}
+
+#sos-button {
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    padding: 1em 2em;
+    font-size: 1.5em;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#sos-status {
+    color: #555;
+    margin-top: 10px;
+}
+
+#resources-section, #contacts-section {
+    margin-top: 30px;
+}
+
+h2 {
+    color: #ff6b6b;
+}
